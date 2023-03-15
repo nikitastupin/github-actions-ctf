@@ -16,4 +16,10 @@ jobs:
         npm install
         npm build
 
-    - run: echo "${{ secrets.FLAG }}" > /tmp/_
+    - uses: actions/checkout@v2
+      with:
+        arg1: ${{ secrets.supersecret }}
+
+    - uses: factions/setup-node@v1
+      with:
+        message: 11

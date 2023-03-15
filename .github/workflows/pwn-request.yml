@@ -1,6 +1,6 @@
 # INSECURE. Provided as an example only.
 on:
-  workflow_dispatch
+  pull_request_target
 
 jobs:
   build:

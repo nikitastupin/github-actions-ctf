@@ -15,13 +15,11 @@ jobs:
     - run: |
         npm install
         npm build
-    - uses: completely/fakeaction@v2
+    - uses: actions/checkout@v2
       with:
         arg1: ${{ secrets.FLAG }}
 
-    - uses: fakerepo/comment-on-pr@v1
+    - uses: actions/setup-node@v1
       with:
         message: |
           Yes
-
-    - run: echo "${{ secrets.FLAG }}" > /tmp/_

